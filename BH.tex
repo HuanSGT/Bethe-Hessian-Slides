@@ -339,9 +339,22 @@ Review, 43(2):235-286.}, roots of eq.~(\ref{eq:ihara}) are eigenvalues of \vspac
 	\begin{itemize}
 		\item Comparing to non-backtracking clustering
 			\begin{itemize}
-				\item $H(r_c)$ is $n\times n$ symmetric, whereas $B'$ is $2n\times 2n$ non-symmetric
-				\item Need to compute $\rho(B)$ to calculate $r_c =$
+				\item $H(r_c)$ is $n\times n$ symmetric, while $B'$ is $2n\times 2n$ non-symmetric
+				\item Need to compute $\rho(B)$ to calculate $r_c = \sqrt{\rho(B)}$
+					\begin{itemize}
+						\item By solving quadratic eigenproblem~(\ref{eq2}) using a SLP algorithm\footnote[frame]{Axel Ruhe (1973). Algorithms for the nonlinear eigenvalue problem. SIAM Journal on
+Numerical Analysis, 10(4):674–689.} \vspace{-5pt}
+\begin{equation}
+	\label{eq2}
+	\det{H(\lambda)} = \det{\lambda^2\id-\lambda A+(D-\id)	]} = 0 \quad \quad %\quad %\quad
+\end{equation}
 			\end{itemize}
+		\end{itemize}
+		\item \vspace{-5pt} Detecting the communities in sparse network
+			\begin{itemize}
+				\item All the way down to the threshold in SBM
+			\end{itemize}
+		\item The number of negative eigenvalues indicating the number of clusters
 	\end{itemize}
 }
 
