@@ -1,0 +1,339 @@
+\def\pgfsysdriver{pgfsys-dvipdfm.def}
+\documentclass[12pt]{beamer}
+
+\usetheme{Warsaw}
+
+\setbeamertemplate{headline}{}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pgfpages}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage{dsfont}
+\usepackage[backend=biber]{biblatex}
+%\addbibresource{bh.bib}
+\bibliography{bh}
+
+\addtobeamertemplate{frametitle}{\vspace*{-5pt}}{\vspace*{0pt}}
+
+%\usepackage[scaled=0.95]{helvet}
+
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+
+\usefonttheme{professionalfonts}
+
+\setbeamertemplate{navigation symbols}{}
+
+\setsansfont{Open Sans}[Scale=0.8]
+
+\setbeamerfont{title}{
+	%size={\fontsize{16}{16}}
+}
+
+\setbeamerfont{date}{
+	family=\fontspec{WenQuanYi Micro Hei}
+	%size={\fontsize{50}{50}}
+}
+
+\setbeamerfont{institute}{
+	%family=\fontspec{Open Sans},
+	%size={\fontsize{7}{7}}
+}
+
+\setbeamerfont{footnote}{
+	size={\fontsize{9}{9}}
+}
+
+\title{Spectral Clustering of Graphs with the Bethe Hessian}
+
+\author{Alaa Saade\inst{1} \and Florent Krzakala\inst{1,2} \and Lenka Zdeborov\'a\inst{3}}
+
+\institute{
+	\inst{1}
+	Laboratoire de Physique Statistique, CNRS UMR 8550, \\
+  Universit\'e P. et M. Curie Paris 6 et \'Ecole Normale Sup\'erieure,
+  24, rue Lhomond, 75005 Paris, France.
+	\and
+	\inst{2}
+	ESPCI and CNRS UMR 7083 Gulliver, 10 rue Vauquelin,Paris 75005
+	\and
+	\inst{3}
+	Institut de Physique Th\'eorique, CEA Saclay and URA 2306, CNRS, 91191 Gif-sur-Yvette, France
+}
+
+\date{%  Speaker:\quad 李\,寰
+}
+
+\newcommand{\insfig}[2][1]{
+	\begin{figure}
+		\includegraphics[width=#1\textwidth]{#2.pdf}
+	\end{figure}
+}
+\newcommand{\cin}{c_{\mathrm in}}
+\newcommand{\cout}{c_{\mathrm out}}
+\newcommand{\id}{\mathds{1}}
+
+\graphicspath{{figs/}}
+
+\begin{document}
+\begin{spacing}{1.3}
+
+\frame{
+	\vspace{15pt}
+	\titlepage
+}
+
+\frame{
+	\frametitle{Clustering by the Laplacian $L = D - A$\footnote[frame]{Ulrike Luxburg (2007). A tutorial on spectral clustering. Statistics and Computing,
+17(4):395-416.}}
+	%\begin{block}{Unnormalized spectral clustering}
+	Input: Adjacency matrix $A \in \mathbb{R}^{n\times n}$, number of clusters $q$
+	
+	\begin{itemize}
+		\item $q = 2$
+			\begin{itemize}
+				\item Cluster by the signs of the 2nd eigenvector of $L$
+			\end{itemize}
+		\item $q > 2$
+			\begin{itemize}
+				\item Let $u_1, \cdots, u_q$ be the first $q$ eigenvectors of $L$ %\vspace{5pt}
+				\item Let $ U = (u_1, \cdots, u_q) \in \mathbb{R}^{n\times q}$ %\vspace{5pt}
+				\item Let $ 
+				\begin{pmatrix}
+					y_1 \\ \vdots \\ y_n
+				\end{pmatrix}
+				= U
+				$
+				%\vspace{5pt}
+				\item Cluster the points $y_1, \cdots, y_n \in \mathbb{R}^q$ with $k$-means
+			\end{itemize}
+	\end{itemize}
+	%\end{block}
+}
+
+\frame{
+	\frametitle{Clustering by the Adjacency Matrix $A$\footnote[frame]{Avrim Blum, John Hopcroft, and Ravindran Kannan (2016). Foundations of Data Science (pp. 275-281).}}
+	\insfig{Spectral_Clustering}
+}
+
+\frame{
+	\frametitle{Spectral Clustering in Sparse Networks}
+	\begin{itemize}
+		\item Clustering based on $A$ fails to detect communities
+		\vspace{5pt}
+		\item Locally tree-like structure
+		\vspace{5pt}
+		\item Leading eigenvalues of $A$ are dictated by the vertices of highest degree\footnote[frame]{Michael Krivelevich and Benny Sudakov (2003). The largest eigenvalue of sparse
+random graphs. Combinatorics, Probability and Computing, 12(01):61-72.}
+		\vspace{5pt}
+		\item Corresponding eigenvectors are localized around these vertices\footnotemark[\value{footnote}]
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Clustering by the Non-Backtracking Matrix\footnote[frame]{Florent Krzakala, Cristopher Moore, et al (2013). Spectral redemption in clustering
+sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935–20940.}}
+	\begin{itemize}
+		\item The $2m\times 2m$ non-backtracking matrix $B$
+		\[
+		B_{(u \to v),(x \to y)} = \begin{cases} 
+		1 & \mbox{if $v=x$ and $u \ne y$} \\
+		0 & \mbox{otherwise} \, . 
+		\end{cases}
+		\]
+		\item The spectrum of $B$ is not sensitive to high-degree vertices
+		\item Properties of $B$
+			\begin{itemize}
+				\item A tree contributes zero eigenvalues to the spectrum
+				\item Unicyclic components yield eigenvalues either $1$ or $-1$
+			\end{itemize}
+
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Stochastic Block Model}
+	\begin{itemize}
+		\item Stochastic block model
+			\begin{itemize}
+				\item $q$ groups of vertices with size $n/q$
+				\item Each vertex $v$ has a group label $g_v \in \{1, \cdots, q\}$
+				\item Adjacency matrix $A$ is generated according to the distribution
+				\[
+					\Pr[A_{u,v}=1] = \begin{cases}	
+						\cin / n & g_u = g_v \\
+						\cout / n & g_u \neq g_v 
+					\end{cases},
+					{\rm where} \cin > \cout
+				\]
+			\end{itemize}
+		\item Average degree $c = (\cin + \cout)/2$
+			\begin{itemize}
+				\item $L = D - A \approx c\id - A$
+				\item Clustering by the largest $q$ eigenvectors of $A$
+			\end{itemize}
+		\item $G$ becomes sparse when $n$ is large
+			%\begin{itemize}
+			%	\item Spectral clustering by $A$ fails
+			%\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experiments}
+%	\vspace{-5pt}
+	\vspace{-5pt}
+	\only<1-1>{
+	\begin{figure}
+		\makebox[\linewidth][c]{
+		\begin{subfigure}[H]{0.45\textwidth}
+			\includegraphics[width=1\textwidth]{EXP1}
+			\label{exp1}
+			\caption{The spectrum of $A$}
+		\end{subfigure}
+		\hspace{20pt}
+		\begin{subfigure}[H]{0.45\textwidth}
+			\includegraphics[width=1\textwidth]{EXP2}
+			\label{exp2}
+			\caption{The spectrum of $B$}
+		\end{subfigure}
+		}
+		%\caption{The spectrum of $A$ (left) and $B$ (right)}
+	\end{figure}
+	\begin{itemize}
+		\item $n = 4000$, $\cin = 5$ and $\cout = 1$
+		\item The radius of the bulk
+			\begin{itemize}
+				\item For $A$, $2\sqrt{c} = 3.46$ 
+				\item For $B$, $\sqrt{c} = \sqrt{3}$
+			\end{itemize}
+	\end{itemize}
+	}
+	
+	\only<2-2>{
+	\begin{figure}
+		\makebox[\linewidth][c]{
+		\begin{subfigure}[H]{0.45\textwidth}
+			\includegraphics[width=1\textwidth]{EXP3}
+			%\caption{The first 3 eigenvalues of $B$}
+		\end{subfigure}
+		\quad
+		\begin{subfigure}[H]{0.45\textwidth}
+			\includegraphics[width=1\textwidth]{EXP4}
+		\end{subfigure}
+		}
+		\caption{The accuracy of spectral clustering based on different matrices}
+	\end{figure}
+	\vspace{-5pt}
+	\begin{itemize}
+		\item $n = 10^5$
+			%\begin{itemize}
+			%	\item On the left, set $c = 3$ and vary $\cin - \cout$
+			%	\item On the right, set $\cout/\cin = 0.3$ and vary $c$
+			%\end{itemize}
+		\item Performance is measured by \textit{overlap}
+		\vspace{-10pt}
+		\begin{equation}
+\label{eq:overlap}	
+        \left( \frac{1}{n} \sum_u \delta_{g_u , \tilde{g}_u} -
+          \frac{1}{q}\right) \left/ \left( 1 -  \frac{1}{q} \right) \right. \,  \nonumber
+\end{equation}
+	\end{itemize}
+	}
+}
+
+\frame{
+	\frametitle{Detecting Number of Clusters}
+	\begin{figure}
+		\includegraphics[width=1\textwidth]{DNOC}
+		%\hspace*{8cm}
+		\begin{itemize}
+			\item Each circle's radius is $\sqrt{\rho(B)}$
+			\item The number of real eigenvalues outside the circle indicates the number $q$ of clusters
+		\end{itemize}
+	\end{figure}
+}
+
+
+\frame{
+	\only<1-1>{
+	\frametitle{Reducing the Computational Complexity}
+	}
+	\only<2-2>{
+	\frametitle{The Bethe Hessian Matrix}
+	}
+	\vspace{-3.5pt}
+	\begin{itemize}
+		\item All eigenvalues $\mu$ of $B$ not $\pm 1$ are the roots of the equation\only<1-1>{\footfullcite{OJS07}}
+		\begin{equation} 
+			\label{eq:ihara}
+			\det \left[ \mu^2 \id - \mu A + (D-\id) \right] = 0 \,
+		\end{equation} 
+		\begin{overprint}
+		\onslide<1>
+		\item Roots of eq.~(\ref{eq:ihara}) are eigenvalues of
+		\begin{equation}
+			\label{eq:2nby2n}
+			B' = \begin{pmatrix}
+			0 & D-\id \\
+			-\id & A
+			\end{pmatrix}\quad \quad \quad \quad \nonumber
+		\end{equation}
+		\item Clustering by a $2n\times 2n$ matrix rather than a $2m\times 2m$ one
+		\onslide<2>
+		\item The Bethe Hessian matrix $H(r)$
+			\[
+				H(r):=r^2\id-rA+(D - \id) \quad \quad  \quad \quad
+			\]
+			\item $\forall$ real eigenvalue $\mu$ of $B$, $H(\mu)$ has a eigenvalue 0
+			\begin{itemize}
+				\item Let $r_c = \sqrt{\rho(n)}$
+				\item Eigenvectors of $H(r_c)$'s negative eigenvalues reveal clustering
+			\end{itemize}
+		\end{overprint}
+	\end{itemize}
+}
+
+\frametitle{Conclusion and Perspectives}
+
+
+\frame{
+	\frametitle{An Example}
+	\vspace{-5pt}
+	\insfig[0.4]{EXP2}
+	\vspace{-10pt}
+	\insfig{AE}
+}
+
+\frame{
+	\frametitle{Experiments}
+	\insfig{EXB1}
+	\insfig[0.8]{EXB2}
+}
+
+\frame{
+	\frametitle{Conclusions and Perspectives}
+}
+
+\begin{frame}
+	\Huge{\centerline{The End}}
+\end{frame}
+
+%\begin{thebibliography}{9}
+%\bibitem{ClFi07}
+%J.~Clark and R.~Fierro, ``Mobile robotic sensors for perimeter detection and
+%  tracking,'' \emph{ISA Trans.}, vol.~46, no.~1, pp. 3--13, 2007.
+%\end{thebibliography}
+
+\end{spacing}
+\end{document}
