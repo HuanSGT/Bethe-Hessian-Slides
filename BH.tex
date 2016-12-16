@@ -78,8 +78,8 @@
 		\includegraphics[width=#1\textwidth]{#2.pdf}
 	\end{figure}
 }
-\newcommand{\cin}{c_{\mathrm in}}
-\newcommand{\cout}{c_{\mathrm out}}
+\newcommand{\cin}{c_{\mathrm{in}}}
+\newcommand{\cout}{c_{\mathrm{out}}}
 \newcommand{\id}{\mathds{1}}
 
 \graphicspath{{figs/}}
@@ -163,24 +163,25 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
 
 \frame{
 	\frametitle{Stochastic Block Model}
+	\vspace{-5pt}
 	\begin{itemize}
 		\item Stochastic block model
 			\begin{itemize}
 				\item $q$ groups of vertices with size $n/q$
 				\item Each vertex $v$ has a group label $g_v \in \{1, \cdots, q\}$
-				\item Adjacency matrix $A$ is generated according to the distribution
+				\item Adjacency matrix $A$ is generated according to the distribution \vspace{-7.5pt}
 				\[
 					\Pr[A_{u,v}=1] = \begin{cases}	
 						\cin / n & g_u = g_v \\
 						\cout / n & g_u \neq g_v 
 					\end{cases},
-					{\rm where} \cin > \cout
+					\mbox{where}\ \cin > \cout
 				\]
 			\end{itemize}
-		\item Average degree $c = (\cin + \cout)/2$
+		\item \vspace{-5pt} Average degree $c = (\cin + \cout)/2$ \hspace{1pt} when $q = 2$
 			\begin{itemize}
 				\item $L = D - A \approx c\id - A$
-				\item Clustering by the largest $q$ eigenvectors of $A$
+				\item Clustering by the second largest eigenvector of $A$
 			\end{itemize}
 		\item $G$ becomes sparse when $n$ is large
 			%\begin{itemize}
@@ -190,10 +191,9 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
 }
 
 \frame{
-	\frametitle{Experiments}
+	\frametitle{Spectrum of $A$ and $B$}
 %	\vspace{-5pt}
 	\vspace{-5pt}
-	\only<1-1>{
 	\begin{figure}
 		\makebox[\linewidth][c]{
 		\begin{subfigure}[H]{0.45\textwidth}
@@ -211,16 +211,16 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
 		%\caption{The spectrum of $A$ (left) and $B$ (right)}
 	\end{figure}
 	\begin{itemize}
-		\item $n = 4000$, $\cin = 5$ and $\cout = 1$
+		\item $n = 4000$, $\cin = 5$, $\cout = 1$
 		\item The radius of the bulk
 			\begin{itemize}
 				\item For $A$, $2\sqrt{c} = 3.46$ 
 				\item For $B$, $\sqrt{c} = \sqrt{3}$
 			\end{itemize}
 	\end{itemize}
-	}
-	
-	\only<2-2>{
+}
+
+\frame{	
 	\begin{figure}
 		\makebox[\linewidth][c]{
 		\begin{subfigure}[H]{0.45\textwidth}
@@ -241,7 +241,7 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
 			%	\item On the left, set $c = 3$ and vary $\cin - \cout$
 			%	\item On the right, set $\cout/\cin = 0.3$ and vary $c$
 			%\end{itemize}
-		\item Performance is measured by \textit{overlap}
+		\item Overlap
 		\vspace{-10pt}
 		\begin{equation}
 \label{eq:overlap}	
@@ -249,7 +249,6 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
           \frac{1}{q}\right) \left/ \left( 1 -  \frac{1}{q} \right) \right. \,  \nonumber
 \end{equation}
 	\end{itemize}
-	}
 }
 
 \frame{
