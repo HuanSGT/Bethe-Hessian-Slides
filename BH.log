@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.12)  16 DEC 2016 19:15
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.12)  16 DEC 2016 19:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1448,7 +1448,11 @@ File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 \@quotelevel=\count354
 \@quotereset=\count355
 
-(./BH.aux)
+(./BH.aux
+
+LaTeX Warning: Label `eq:ihara' multiply defined.
+
+)
 \openout1 = `BH.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
@@ -1718,41 +1722,23 @@ File: figs/EXP3.pdf Graphic file (type QTm)
  <use  "figs/EXP3.pdf" >
 File: figs/EXP4.pdf Graphic file (type QTm)
 
-<use  "figs/EXP4.pdf" >
-LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/it' will be
-(Font)              scaled to size 9.60004pt on input line 252.
- [8
+<use  "figs/EXP4.pdf" > [8
 
 ]
 File: figs/DNOC.pdf Graphic file (type QTm)
  <use  "figs/DNOC.pdf" > [9
 
-]
+] [10
 
-LaTeX Warning: Citation 'OJS07' on page 10 undefined on input line 304.
-
-LaTeX Font Info:    Font shape `EU1/OpenSans(0)/bx/n' will be
-(Font)              scaled to size 7.20003pt on input line 304.
-
-Overfull \hbox (25.16226pt too wide) in paragraph at lines 304--304
- []  
- []
-
-[10
-
-]
-Overfull \hbox (25.16226pt too wide) in paragraph at lines 304--304
- []  
- []
-
-[11
+] [11
 
 ]
 File: figs/EXP2.pdf Graphic file (type QTm)
- <use  "figs/EXP2.pdf" >
+
+<use  "figs/EXP2.pdf" >
 File: figs/AE.pdf Graphic file (type QTm)
  <use  "figs/AE.pdf" >
-Overfull \vbox (3.8319pt too high) detected at line 315
+Overfull \vbox (3.8319pt too high) detected at line 323
  []
 
 [12
@@ -1767,7 +1753,7 @@ File: figs/EXB2.pdf Graphic file (type QTm)
 
 ]
 LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
-(Font)              scaled to size 19.90407pt on input line 329.
+(Font)              scaled to size 19.90407pt on input line 337.
  [15
 
 ]
@@ -1780,35 +1766,27 @@ LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
 \tf@snm=\write9
 \openout9 = `BH.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
  (./BH.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 338.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 338.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 346.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 346.
 
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                BH
-(biblatex)                and rerun LaTeX afterwards.
+LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to 'BH.run.xml'.
 \openout1 = `BH.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 346.
  ) 
 Here is how much of TeX's memory you used:
- 39251 strings out of 493706
- 763711 string characters out of 6145769
- 1139618 words of memory out of 5000000
- 41934 multiletter control sequences out of 15000+600000
- 15652 words of font info for 95 fonts, out of 8000000 for 9000
+ 39131 strings out of 493706
+ 761394 string characters out of 6145769
+ 1139697 words of memory out of 5000000
+ 41816 multiletter control sequences out of 15000+600000
+ 15636 words of font info for 93 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 65i,16n,100p,10374b,1339s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,16n,100p,10374b,910s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on BH.pdf (15 pages).

@@ -220,7 +220,8 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
 	\end{itemize}
 }
 
-\frame{	
+\frame{
+	\frametitle{Experiments $n = 10^5$}	
 	\begin{figure}
 		\makebox[\linewidth][c]{
 		\begin{subfigure}[H]{0.45\textwidth}
@@ -232,22 +233,22 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
 			\includegraphics[width=1\textwidth]{EXP4}
 		\end{subfigure}
 		}
-		\caption{The accuracy of spectral clustering based on different matrices}
+		%\caption{The accuracy of spectral clustering based on different matrices}
 	\end{figure}
 	\vspace{-5pt}
 	\begin{itemize}
-		\item $n = 10^5$
+		%\item $n = 10^5$
 			%\begin{itemize}
 			%	\item On the left, set $c = 3$ and vary $\cin - \cout$
 			%	\item On the right, set $\cout/\cin = 0.3$ and vary $c$
 			%\end{itemize}
-		\item Overlap
-		\vspace{-10pt}
-		\begin{equation}
-\label{eq:overlap}	
+		\item $\mbox{Overlap} \triangleq
         \left( \frac{1}{n} \sum_u \delta_{g_u , \tilde{g}_u} -
-          \frac{1}{q}\right) \left/ \left( 1 -  \frac{1}{q} \right) \right. \,  \nonumber
-\end{equation}
+          \frac{1}{q}\right) \Big{/} \left( 1 -  \frac{1}{q} \right)
+$
+		\vspace{5pt}
+		\item Theoretical threshold\footnote[frame]{Elchanan Mossel, Joe Neeman, and Allan Sly (2012). Stochastic block models and
+reconstruction. arXiv preprint, arXiv:1202.1499.} $\approx 3.46$
 	\end{itemize}
 }
 
@@ -265,22 +266,17 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
 
 
 \frame{
-	\only<1-1>{
 	\frametitle{Reducing the Computational Complexity}
-	}
-	\only<2-2>{
-	\frametitle{The Bethe Hessian Matrix}
-	}
-	\vspace{-3.5pt}
+	%\vspace{-3.5pt}
 	\begin{itemize}
-		\item All eigenvalues $\mu$ of $B$ not $\pm 1$ are the roots of the equation\only<1-1>{\footfullcite{OJS07}}
+		\item All eigenvalues $\mu$ of $B$ not $\pm 1$ are the roots of the equation\footnote[frame]{Omer Angel, Joel Friedman, and Shlomo Hoory (2015). The non-backtracking spectrum of the universal cover of a graph. Trans. Amer. Math. Soc., 367(6):4287-4318.}
+		\vspace{-10pt}
 		\begin{equation} 
 			\label{eq:ihara}
 			\det \left[ \mu^2 \id - \mu A + (D-\id) \right] = 0 \,
-		\end{equation} 
-		\begin{overprint}
-		\onslide<1>
-		\item Roots of eq.~(\ref{eq:ihara}) are eigenvalues of
+		\end{equation}
+		\item \vspace{-10pt} By the first companion linearization\footnote[frame]{Francoise Tisseur and Karl Meerbergen (2001). The quadratic eigenvalue problem. SIAM
+Review, 43(2):235-286.}, roots of eq.~(\ref{eq:ihara}) are eigenvalues of \vspace{-10pt}
 		\begin{equation}
 			\label{eq:2nby2n}
 			B' = \begin{pmatrix}
@@ -288,18 +284,30 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935â
 			-\id & A
 			\end{pmatrix}\quad \quad \quad \quad \nonumber
 		\end{equation}
-		\item Clustering by a $2n\times 2n$ matrix rather than a $2m\times 2m$ one
-		\onslide<2>
-		\item The Bethe Hessian matrix $H(r)$
+		\item \vspace{-2.5pt} Clustering by a $2n\times 2n$ matrix rather than a $2m\times 2m$ one
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{The Bethe Hessian Matrix}
+	\vspace{-9pt}
+	\begin{itemize}
+		\item All eigenvalues $\mu$ of $B$ not $\pm 1$ are the roots of the equation
+		\vspace{-10pt}
+		\begin{equation} 
+			\label{eq:ihara}
+			\det \left[ \mu^2 \id - \mu A + (D-\id) \right] = 0 \,
+			\tag{1}
+		\end{equation}
+	\item The Bethe Hessian matrix $H(r)$
 			\[
-				H(r):=r^2\id-rA+(D - \id) \quad \quad  \quad \quad
+				H(r):=r^2\id-rA+(D - \id) %\quad \quad  \quad \quad
 			\]
 			\item $\forall$ real eigenvalue $\mu$ of $B$, $H(\mu)$ has a eigenvalue 0
 			\begin{itemize}
-				\item Let $r_c = \sqrt{\rho(n)}$
+				\item Let $r_c = \sqrt{\rho(B)}$
 				\item Eigenvectors of $H(r_c)$'s negative eigenvalues reveal clustering
 			\end{itemize}
-		\end{overprint}
 	\end{itemize}
 }
 
