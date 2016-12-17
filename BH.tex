@@ -3,7 +3,9 @@
 
 \usetheme{Warsaw}
 
+%\setbeamertemplate{footline}{}	
 \setbeamertemplate{headline}{}
+\setbeamertemplate{navigation symbols}{}
 
 \usepackage{color}
 \usepackage{xcolor}
@@ -34,9 +36,6 @@
 \renewcommand*{\thefootnote}{[\arabic{footnote}]}
 
 \usefonttheme{professionalfonts}
-
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}{}
 
 \setsansfont{Open Sans}[Scale=0.8]
 \setCJKsansfont[Scale=0.8]{WenQuanYi Micro Hei}
@@ -308,11 +307,11 @@ reconstruction. arXiv preprint, arXiv:1202.1499.} $\approx 3.46$
 	\frametitle{Reducing the Computational Complexity}
 	%\vspace{-3.5pt}
 	\begin{itemize}
-		\item All eigenvalues $\mu$ of $B$ not $\pm 1$ are the roots of the equation\footnote[frame]{Omer Angel, Joel Friedman, and Shlomo Hoory (2015). The non-backtracking spectrum of the universal cover of a graph. Trans. Amer. Math. Soc., 367(6):4287-4318.}
+		\item All eigenvalues $\lambda$ of $B$ not $\pm 1$ are the roots of the equation\footnote[frame]{Omer Angel, Joel Friedman, and Shlomo Hoory (2015). The non-backtracking spectrum of the universal cover of a graph. Trans. Amer. Math. Soc., 367(6):4287-4318.}
 		\vspace{-10pt}
 		\begin{equation} 
 			\label{eq:ihara}
-			\det \left[ \mu^2 \id - \mu A + (D-\id) \right] = 0 \,
+			\det \left[ \lambda^2 \id - \lambda A + (D-\id) \right] = 0 \,
 		\end{equation}
 		\item \vspace{-10pt} By the first companion linearization\footnote[frame]{Francoise Tisseur and Karl Meerbergen (2001). The quadratic eigenvalue problem. SIAM
 Review, 43(2):235-286.}, roots of eq.~(\ref{eq:ihara}) are eigenvalues of \vspace{-10pt}
@@ -331,19 +330,20 @@ Review, 43(2):235-286.}, roots of eq.~(\ref{eq:ihara}) are eigenvalues of \vspac
 	\frametitle{The Bethe Hessian Matrix}
 	\vspace{-9pt}
 	\begin{itemize}
-		\item All eigenvalues $\mu$ of $B$ not $\pm 1$ are the roots of the equation
+		\item All eigenvalues $\lambda$ of $B$ not $\pm 1$ are the roots of the equation
 		\vspace{-10pt}
 		\begin{equation} 
 			\label{eq:ihara}
-			\det \left[ \mu^2 \id - \mu A + (D-\id) \right] = 0 \,
+			\det \left[ \lambda^2 \id - \lambda A + (D-\id) \right] = 0 \,
 			\tag{1}
 		\end{equation}
 	\item The Bethe Hessian matrix $H(r)$
 			\[
 				H(r):=r^2\id-rA+(D - \id) %\quad \quad  \quad \quad
 			\]
-			\item $\forall$ real eigenvalue $\mu$ of $B$, $H(\mu)$ has a eigenvalue 0
+			\item $\forall$ real eigenvalue $\lambda$ of $B$, $H(\lambda)$ has a eigenvalue 0
 			\begin{itemize}
+				\item $H(\lambda)$'s null space \hspace{2pt} $\longleftrightarrow$ \hspace{2pt} $B$'s eigenvector corresponding to $\lambda$
 				\item Let $r_c = \sqrt{\rho(B)}$
 				\item Eigenvectors of $H(r_c)$'s negative eigenvalues reveal clustering
 			\end{itemize}
