@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.12)  18 DEC 2016 04:34
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.12)  18 DEC 2016 04:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2214,6 +2214,9 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 [11
 
 
+] [12
+
+
 ]
 File: figs/1000.pdf Graphic file (type QTm)
  <use  "figs/1000.pdf" >
@@ -2222,23 +2225,23 @@ File: figs/AE.pdf Graphic file (type QTm)
 Overfull \vbox (6.04652pt too high) detected at line 350
  []
 
-[12
+[13
 
 
 ]
 File: figs/EXB1.pdf Graphic file (type QTm)
  <use  "figs/EXB1.pdf" >
 File: figs/EXB2.pdf Graphic file (type QTm)
- <use  "figs/EXB2.pdf" > [13
+ <use  "figs/EXB2.pdf" > [14
 
 
-] [14
+] [15
 
 
 ]
 LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
 (Font)              scaled to size 19.90407pt on input line 384.
- [15
+ [16
 
 
 ]
@@ -2251,7 +2254,7 @@ LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
 \tf@snm=\write9
 \openout9 = `BH.snm'.
 
- [16
+ [17
 
 
 ]
@@ -2273,10 +2276,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 393.
 Here is how much of TeX's memory you used:
  42180 strings out of 493706
  832201 string characters out of 6145769
- 1228407 words of memory out of 5000000
+ 1228465 words of memory out of 5000000
  44840 multiletter control sequences out of 15000+600000
  16394 words of font info for 99 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 65i,16n,100p,10374b,1073s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,16n,100p,10374b,1077s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on BH.pdf (15 pages).
+Output written on BH.pdf (16 pages).
