@@ -1,9 +1,22 @@
 [file]
 bh.pdf
 [skip]
-2,3,
+15,
 [end_user_slide]
-1
+14
+[font_size]
+23922
 [notes]
 ### 1
-rrrr
+计算机学院的研一学生
+导师章老师
+目前的研究方向：枚举问题、谱图论的一些应用
+
+This paper:
+- NIPS14
+- Gives a new method for spectral clustering
+- Clustering by spectrum Bethe Hessian
+- It illustrates:
+	- Relatively better clustering result
+	- Relatively lower time time complexity### 2
+sdff

@@ -1,11 +1,9 @@
 \def\pgfsysdriver{pgfsys-dvipdfm.def}
+\pdfpagewidth=\paperwidth
+\pdfpageheight=\paperheight
+
 \documentclass[12pt]{beamer}
-
 \usetheme{Warsaw}
-
-%\setbeamertemplate{footline}{}	
-\setbeamertemplate{headline}{}
-\setbeamertemplate{navigation symbols}{}
 
 \usepackage{color}
 \usepackage{xcolor}
@@ -21,17 +19,16 @@
 \usepackage{amsmath}
 \usepackage{bbm}
 \usepackage{dsfont}
-\usepackage[backend=biber]{biblatex}
 \usepackage{xeCJK}
-%\addbibresource{bh.bib}
-\bibliography{bh}
+\usepackage[backend=biber]{biblatex}
 
-%\setbeameroption{show notes on second screen=right}
-%\setbeamertemplate{note page}[plain]
+%\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{navigation symbols}{}
+\setbeameroption{show notes on second screen=right}
+\setbeamertemplate{note page}[plain]
 
 \addtobeamertemplate{frametitle}{\vspace*{-5pt}}{\vspace*{0pt}}
-
-%\usepackage[scaled=0.95]{helvet}
 
 \renewcommand*{\thefootnote}{[\arabic{footnote}]}
 
@@ -40,36 +37,13 @@
 \setsansfont{Open Sans}[Scale=0.8]
 \setCJKsansfont[Scale=0.8]{WenQuanYi Micro Hei}
 
-\setbeamerfont{title}{
-	%size={\fontsize{16}{16}}
-}
-
-\setbeamerfont{date}{
-	family=\fontspec{WenQuanYi Micro Hei}
-	%size={\fontsize{50}{50}}
-}
-
-\setbeamerfont{note page}{
-	%family=\fontspec{WenQuanYi Micro Hei}
-	size={\fontsize{14}{14}}
-}
-
-\setbeamerfont{note title}{
-	size = {\fontsize{12}{12}}
-}
-
-\setbeamerfont{institute}{
-	%family=\fontspec{Open Sans},
-	%size={\fontsize{7}{7}}
-}
-
-\setbeamerfont{footnote}{
-	size={\fontsize{9}{9}}
-}
-
-\setbeamerfont{footline}{
-	size={\fontsize{7}{7}}
-}
+%\setbeamerfont{title}{ size={\fontsize{16}{16}} }
+%\setbeamerfont{date}{ size={\fontsize{20}{20}} }
+\setbeamerfont{note page}{	size={\fontsize{14}{14}} }
+%\setbeamerfont{note title}{ size = {\fontsize{12}{12}} }
+%\setbeamerfont{institute}{ size={\fontsize{7}{7}} }
+\setbeamerfont{footnote}{ size={\fontsize{9}{9}} }
+\setbeamerfont{footline}{ size={\fontsize{7}{7}} }
 
 \title{Spectral Clustering of Graphs with the Bethe Hessian}
 
@@ -88,7 +62,7 @@
 	Institut de Physique Th\'eorique, CEA Saclay and URA 2306, CNRS, 91191 Gif-sur-Yvette, France
 }
 
-\date{%  Speaker:\quad 李\,寰
+\date{ %Speaker:\quad 李\,寰
 }
 
 \newcommand{\insfig}[2][1]{
@@ -110,6 +84,12 @@
 	\titlepage
 }
 \note{
+	\begin{block}{About me}
+		计算机学院，研一\\
+		导师：章老师\\
+		研究方向：枚举问题，随机游走\\
+	\end{block}
+	\begin{block}{About this paper}
 	\begin{itemize}
 		\item NIPS 14
 		\item A new method for spectral clustering
@@ -120,6 +100,7 @@
 				\item relatively low time complexity	
 			\end{itemize}
 	\end{itemize}
+	\end{block}
 }
 
 \frame{
@@ -149,16 +130,17 @@
 	\end{itemize}
 	%\end{block}
 }
-\note{
-	\begin{itemize}
-		\item Clustering by the Laplacian
-	\end{itemize}
-}
+%\note{
+%	\begin{itemize}
+%		\item Clustering by the Laplacian
+%	\end{itemize}
+%}
 
 \frame{
 	\frametitle{Clustering by the Adjacency Matrix $A$\footnote[frame]{Avrim Blum, John Hopcroft, and Ravindran Kannan (2016). Foundations of Data Science (pp. 275-281).}}
 	\insfig{Spectral_Clustering}
 }
+\note{}
 
 \frame{
 	\frametitle{Spectral Clustering in Sparse Networks}
@@ -305,7 +287,7 @@ reconstruction. arXiv preprint, arXiv:1202.1499.} $\approx 3.46$
 
 \frame{
 	\frametitle{Reducing the Computational Complexity}
-	%\vspace{-3.5pt}
+	\vspace{-11.8pt}
 	\begin{itemize}
 		\item All eigenvalues $\lambda$ of $B$ not $\pm 1$ are the roots of the equation\footnote[frame]{Omer Angel, Joel Friedman, and Shlomo Hoory (2015). The non-backtracking spectrum of the universal cover of a graph. Trans. Amer. Math. Soc., 367(6):4287-4318.}
 		\vspace{-10pt}

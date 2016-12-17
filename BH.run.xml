@@ -78,8 +78,5 @@
     <requires type="dynamic">
       <file>BH.bcf</file>
     </requires>
-    <requires type="editable">
-      <file>bh.bib</file>
-    </requires>
   </external>
 </requests>
