@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.12)  18 DEC 2016 04:46
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.12)  21 DEC 2016 20:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1843,9 +1843,6 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )))
-\pgfpages@box@1=\box78
-\pgfpages@box@2=\box79
-
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/themes/font/beamerfontthem
 eprofessionalfonts.sty
 Package: beamerfontthemeprofessionalfonts 2010/06/17  (rcs-revision d02a7cf4d8a
@@ -2017,7 +2014,7 @@ LaTeX Font Info:    ... okay on input line 79.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box80
+\AtBeginShipoutBox=\box78
 Package hyperref Info: Link coloring OFF on input line 79.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -2151,55 +2148,76 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 85.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
-(Font)              scaled to size 6.40002pt on input line 85.
+(Font)              scaled to size 6.32pt on input line 85.
+LaTeX Font Info:    Calculating math sizes for size <7.9> on input line 85.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.52997> not available
+(Font)              size <6> substituted on input line 85.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.95> not available
+(Font)              size <5> substituted on input line 85.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.52997> not available
+(Font)              size <6> substituted on input line 85.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.95> not available
+(Font)              size <5> substituted on input line 85.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.52997> not available
+(Font)              size <6> substituted on input line 85.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.95> not available
+(Font)              size <5> substituted on input line 85.
+
+LaTeX Font Info:    Font shape `EU1/WenQuanYiMicroHei(0)/m/n' will be
+(Font)              scaled to size 9.60004pt on input line 85.
 LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
 (Font)              scaled to size 3.20001pt on input line 85.
+[1
+
+]
 LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
-(Font)              scaled to size 11.20004pt on input line 85.
-LaTeX Font Info:    Font shape `EU1/WenQuanYiMicroHei(0)/m/n' will be
-(Font)              scaled to size 11.20004pt on input line 104.
-LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
-(Font)              scaled to size 8.76003pt on input line 104.
+(Font)              scaled to size 8.76003pt on input line 132.
 LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
 (Font)              scaled to size 7.20003pt on input line 132.
  [2
 
-
 ]
 File: figs/Spectral_Clustering.pdf Graphic file (type QTm)
+ <use  "figs/Spectral_Clustering.pdf" > [3
 
-<use  "figs/Spectral_Clustering.pdf" > [3
-
-
-] [4
-
+]
+LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
+(Font)              scaled to size 6.40002pt on input line 157.
+ [4
 
 ] [5
 
-
 ] [6
-
 
 ]
 File: figs/EXP1.pdf Graphic file (type QTm)
- <use  "figs/EXP1.pdf" >
+
+<use  "figs/EXP1.pdf" >
 File: figs/EXP2.pdf Graphic file (type QTm)
-
-<use  "figs/EXP2.pdf" > [7
-
+ <use  "figs/EXP2.pdf" > [7
 
 ]
 File: figs/EXP3.pdf Graphic file (type QTm)
  <use  "figs/EXP3.pdf" >
 File: figs/EXP4.pdf Graphic file (type QTm)
- <use  "figs/EXP4.pdf" >
-[8
 
+<use  "figs/EXP4.pdf" > [8
 
 ]
 File: figs/DNOC.pdf Graphic file (type QTm)
  <use  "figs/DNOC.pdf" > [9
-
 
 ]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 309.
@@ -2209,13 +2227,10 @@ LaTeX Font Info:    Try loading font information for U+dsrom on input line 309.
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ) [10
 
-
 ]
 [11
 
-
 ] [12
-
 
 ]
 File: figs/1000.pdf Graphic file (type QTm)
@@ -2227,22 +2242,18 @@ Overfull \vbox (6.04652pt too high) detected at line 350
 
 [13
 
-
 ]
 File: figs/EXB1.pdf Graphic file (type QTm)
  <use  "figs/EXB1.pdf" >
 File: figs/EXB2.pdf Graphic file (type QTm)
  <use  "figs/EXB2.pdf" > [14
 
-
 ] [15
-
 
 ]
 LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
 (Font)              scaled to size 19.90407pt on input line 384.
  [16
-
 
 ]
 \tf@nav=\write7
@@ -2254,16 +2265,15 @@ LaTeX Font Info:    Font shape `EU1/OpenSans(0)/m/n' will be
 \tf@snm=\write9
 \openout9 = `BH.snm'.
 
- [17
-
-
-]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 393.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 393.
-
-(./BH.aux)
+ (./BH.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 393.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 393.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.05pt have occurred.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2274,12 +2284,12 @@ Package logreq Info: Writing requests to 'BH.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 393.
  ) 
 Here is how much of TeX's memory you used:
- 42180 strings out of 493706
- 832201 string characters out of 6145769
- 1228465 words of memory out of 5000000
- 44840 multiletter control sequences out of 15000+600000
- 16394 words of font info for 99 fonts, out of 8000000 for 9000
+ 42120 strings out of 493706
+ 829863 string characters out of 6145769
+ 1209807 words of memory out of 5000000
+ 44777 multiletter control sequences out of 15000+600000
+ 18350 words of font info for 111 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 65i,16n,100p,10374b,1077s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,16n,100p,10374b,1050s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on BH.pdf (16 pages).

@@ -25,7 +25,7 @@
 %\setbeamertemplate{footline}{}
 \setbeamertemplate{headline}{}
 \setbeamertemplate{navigation symbols}{}
-\setbeameroption{show notes on second screen=right}
+%\setbeameroption{show notes on second screen=right}
 \setbeamertemplate{note page}[plain]
 
 \addtobeamertemplate{frametitle}{\vspace*{-5pt}}{\vspace*{0pt}}
@@ -41,7 +41,7 @@
 %\setbeamerfont{date}{ size={\fontsize{20}{20}} }
 \setbeamerfont{note page}{	size={\fontsize{14}{14}} }
 %\setbeamerfont{note title}{ size = {\fontsize{12}{12}} }
-%\setbeamerfont{institute}{ size={\fontsize{7}{7}} }
+\setbeamerfont{institute}{ size={\fontsize{7.9}{7.9}} }
 \setbeamerfont{footnote}{ size={\fontsize{9}{9}} }
 \setbeamerfont{footline}{ size={\fontsize{7}{7}} }
 
@@ -62,7 +62,7 @@
 	Institut de Physique Th\'eorique, CEA Saclay and URA 2306, CNRS, 91191 Gif-sur-Yvette, France
 }
 
-\date{ %Speaker:\quad 李\,寰
+\date{ \\ Speaker:\quad 李\,寰 \vspace{-0pt}
 }
 
 \newcommand{\insfig}[2][1]{
@@ -231,11 +231,11 @@ sparse networks. Proceedings of the National Academy of Sciences, 110(52):20935�
 		%\caption{The spectrum of $A$ (left) and $B$ (right)}
 	\end{figure}
 	\begin{itemize}
-		\item $n = 4000$, $\cin = 5$, $\cout = 1$
+		\item $n = 4000$, $\cin = 5$, $\cout = 1$, $c = (\cin + \cout)/2 = 3$
 		\item The radius of the bulk
 			\begin{itemize}
-				\item For $A$, $2\sqrt{c} = 3.46$ 
-				\item For $B$, $\sqrt{c} = \sqrt{3}$
+				\item For $A$, $2\sqrt{c} = 3.46$
+				\item For $B$, $\sqrt{c} = 1.73$
 			\end{itemize}
 	\end{itemize}
 }
